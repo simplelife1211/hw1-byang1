@@ -104,7 +104,8 @@ public class AnnotationPrinter extends CasConsumer_ImplBase implements CasObject
   public void initialize() throws ResourceInitializationException {
 
     // extract configuration parameter settings
-    String oPath = (String) getUimaContext().getConfigParameterValue("outputFile");
+//    String oPath = (String) getUimaContext().getConfigParameterValue("outputFile");
+	  String oPath = "hw1.out";
 
     // Output file should be specified in the descriptor
     if (oPath == null) {
