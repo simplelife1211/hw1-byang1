@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ResourceAccessException;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import com.aliasi.chunk.Chunk;
@@ -41,14 +42,19 @@ public class SimpleGeneAnnotator extends JCasAnnotator_ImplBase {
 	 */
 	public void process(JCas aJCas) {
 		// gets chunker
-		File modelFile = new File("./src/main/resources/ne-en-bio-genetag.HmmChunker");
-		try {
-			chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		}
+			try {
+				chunker = 
+						(Chunker) AbstractExternalizable.readObject(new File(getContext().getResourceFilePath("HMMChunker")));
+			} catch (ResourceAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 		// gets document text
 		String docText = aJCas.getDocumentText();

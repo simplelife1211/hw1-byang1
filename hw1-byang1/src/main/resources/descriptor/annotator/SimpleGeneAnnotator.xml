@@ -32,5 +32,28 @@
       <outputsNewCASes>false</outputsNewCASes>
     </operationalProperties>
   </analysisEngineMetaData>
-  <resourceManagerConfiguration/>
+  <externalResourceDependencies>
+    <externalResourceDependency>
+      <key>HMMChunker</key>
+      <description/>
+      <optional>false</optional>
+    </externalResourceDependency>
+  </externalResourceDependencies>
+  <resourceManagerConfiguration>
+    <externalResources>
+      <externalResource>
+        <name>HMM_CHUNKER_URI</name>
+        <description/>
+        <fileResourceSpecifier>
+          <fileUrl>file:HmmChunker</fileUrl>
+        </fileResourceSpecifier>
+      </externalResource>
+    </externalResources>
+    <externalResourceBindings>
+      <externalResourceBinding>
+        <key>HMMChunker</key>
+        <resourceName>HMM_CHUNKER_URI</resourceName>
+      </externalResourceBinding>
+    </externalResourceBindings>
+  </resourceManagerConfiguration>
 </analysisEngineDescription>
