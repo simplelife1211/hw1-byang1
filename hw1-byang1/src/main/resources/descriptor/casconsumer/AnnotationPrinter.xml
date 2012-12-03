@@ -20,7 +20,7 @@
       <nameValuePair>
         <name>outputFile</name>
         <value>
-          <string>temp-uima-output/annotprint/annotations.txt</string>
+          <string>hw1.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
